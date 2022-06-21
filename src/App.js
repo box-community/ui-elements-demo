@@ -9,8 +9,9 @@ import Nav from './Nav';
 import './app.scss';
 import NotImplemented from './NotImplemented';
 import Explorer from './Explorer';
+import ExplorerSimple from './Explorer-Simple';
 
-const access_token = 'i0JrYQ6z157K8Vj2b62tvGkS69Kpo0uG';
+const access_token = 'lMMkMFexrwnPU4sWJXo0oJDNq8Q6zIqX';
 
 const sideBarProps = {
     hasActivityFeed: true,
@@ -57,7 +58,7 @@ class App extends React.Component {
         super(props);
         this.state = {
             token: access_token,
-            currSel: 'Explorer',
+            currSel: 'ExplorerSimple',
         };
     }
 
@@ -66,6 +67,9 @@ class App extends React.Component {
     }
 
     renderComponent(component) {
+        if (component === 'ExplorerSimple') {
+            return <ExplorerSimple {...explorerProps} />;
+        }
         if (component === 'Explorer') {
             return <Explorer {...explorerProps} />;
         }

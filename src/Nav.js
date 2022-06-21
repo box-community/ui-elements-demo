@@ -9,6 +9,8 @@ class Nav extends React.Component {
                 <div className='menu-title'>UI Elements</div>
                 <div className='menu'>
 
+                    <div className='menu-item' id='ExplorerSimple' onClick={this.props.handleClick}>Explorer Simple</div>
+                    
                     <div className='menu-item' id='Explorer' onClick={this.props.handleClick}>Explorer</div>
 {/* 
                     <div className='menu-item' id='ExplorerExamples' onClick={this.props.handleClick}>Explorer Example</div>
@@ -28,31 +30,5 @@ class Nav extends React.Component {
         );
     }
 }
-
-// const Nav = () => (
-//     <nav>
-//         <div className='menu-title'>UI Elements</div>
-//         <div className='menu'>
-//             <div className='menu-item'>
-//                 <a target='box' href="//docs.box.com/docs/box-content-explorer">Content Explorer</a>
-//             </div>
-//             <div className='menu-item'>
-//                 <a target='box' href="//docs.box.com/docs/box-content-preview">Content Preview</a>
-//             </div>
-//             <div className='menu-item'>
-//                 <a target='box' href="//docs.box.com/docs/box-content-picker">Content Picker</a>
-//             </div>
-//             <div className='menu-item'>
-//                 <a target='box' href="//docs.box.com/docs/box-content-uploader">Content Uploader</a>
-//             </div>
-//             <div className='menu-item'>
-//                 <a target='box' href="//docs.box.com/docs/box-content-sidebar">Content Sidebar</a>
-//             </div>
-//             <div className='menu-item'>
-//                 <a target='box' href="//docs.box.com/docs/box-content-open-with">Content Open With</a>
-//             </div>
-//         </div>
-//     </nav>
-// );
 
 export default Nav;
