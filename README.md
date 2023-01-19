@@ -4,8 +4,11 @@
 
 ## Available Scripts
 
+I'm using node v14.20.1 and npm v6.14.17
+
 In the project directory, you can run:
 
+### `npm install`
 ### `yarn start`
 
 Runs the app in the development mode.\

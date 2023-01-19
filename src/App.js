@@ -16,22 +16,6 @@ import PreviewerAnnotations from './PreviewerAnnotations';
 const access_token = '67p43LjYAMRTe6A8pR6PriAxLATyC0Vf';
 const FILE_ID_DOC = '994851508870';
 
-const sideBarPropsAnnot = {
-    hasSkills: true,
-    hasMetadata: true,
-    detailsSidebarProps: {
-        hasProperties: true,
-    },
-    hasActivityFeed: true,
-    features: {
-        activityFeed: {
-            annotations: {
-                enabled: true
-            }
-        }
-    },
-}
-
 const sideBarProps = {
     hasSkills: true,
     hasMetadata: true,

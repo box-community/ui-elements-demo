@@ -8,6 +8,7 @@ import BoxAnnotations from 'box-annotations';
 import messages from 'box-ui-elements/i18n/en-US';
 
 const language = 'en-US';
+const annotations = new BoxAnnotations();
 
 class PreviewerAnnotations extends React.Component {
     constructor(props) {
@@ -26,6 +27,8 @@ class PreviewerAnnotations extends React.Component {
                     token={this.props.token}
                     language={language}
                     messages={messages}
+
+                    boxAnnotations={annotations}
                     
                     enableAnnotationsDiscoverability= {true}
                     enableAnnotationsImageDiscoverability= {true}
@@ -42,7 +45,7 @@ class PreviewerAnnotations extends React.Component {
                             hasRetentionPolicy: true,
                             hasVersions: true,
                         },
-                        // features: FEATURES,
+
                         hasActivityFeed: true,
                         hasMetadata: true,
                         hasSkills: true,
