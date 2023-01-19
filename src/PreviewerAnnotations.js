@@ -3,20 +3,22 @@
 // import enLocaleData from 'react-intl/locale-data/en';
 import * as React from 'react';
 import ContentPreview from 'box-ui-elements/es/elements/content-preview';
+import BoxAnnotations from 'box-annotations';
+
 import messages from 'box-ui-elements/i18n/en-US';
 
 const language = 'en-US';
 
-class Previewer extends React.Component {
+class PreviewerAnnotations extends React.Component {
     constructor(props) {
         super(props);
-        console.log('Previewer constructor Props', props);
+        console.log('Previewer annotations constructor Props', props);
     }
     render() {
         return (
             <div className='content'>
                 <div className='nav-header'>
-                    <h2>Previewer Simple</h2>
+                    <h2>Previewer w/ Annotations</h2>
                 </div>
                 <ContentPreview
                     hasHeader={true}
@@ -24,7 +26,13 @@ class Previewer extends React.Component {
                     token={this.props.token}
                     language={language}
                     messages={messages}
-                    showAnnotations={false}
+                    
+                    enableAnnotationsDiscoverability= {true}
+                    enableAnnotationsImageDiscoverability= {true}
+                    showAnnotations={true}
+                    showAnnotationsControls= {true}
+                    showAnnotationsDrawingCreate= {true}
+
                     contentSidebarProps={{
                         detailsSidebarProps: {
                             hasAccessStats: true,
@@ -34,15 +42,23 @@ class Previewer extends React.Component {
                             hasRetentionPolicy: true,
                             hasVersions: true,
                         },
+                        // features: FEATURES,
                         hasActivityFeed: true,
                         hasMetadata: true,
                         hasSkills: true,
                         hasVersions: true,
+                        features: {
+                            activityFeed: {
+                                annotations: {
+                                    enabled: true
+                                }
+                            }
+                        },
                     }}
                 />
-            </div >
+            </div>
         );
     }
 }
 
-export default Previewer;
+export default PreviewerAnnotations;

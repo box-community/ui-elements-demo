@@ -10,24 +10,57 @@ import './app.scss';
 import NotImplemented from './NotImplemented';
 import Explorer from './Explorer';
 import ExplorerSimple from './Explorer-Simple';
+import Previewer from './Previewer';
+import PreviewerAnnotations from './PreviewerAnnotations';
 
-const access_token = 'lMMkMFexrwnPU4sWJXo0oJDNq8Q6zIqX';
+const access_token = '67p43LjYAMRTe6A8pR6PriAxLATyC0Vf';
+const FILE_ID_DOC = '994851508870';
 
-const sideBarProps = {
-    hasActivityFeed: true,
-    hasMetaData: true,
+const sideBarPropsAnnot = {
     hasSkills: true,
+    hasMetadata: true,
     detailsSidebarProps: {
         hasProperties: true,
-        hasAccessStats: true,
-        hasVersions: true,
-        hasNotices: true,
     },
+    hasActivityFeed: true,
+    features: {
+        activityFeed: {
+            annotations: {
+                enabled: true
+            }
+        }
+    },
+}
+
+const sideBarProps = {
+    hasSkills: true,
+    hasMetadata: true,
+    detailsSidebarProps: {
+        hasProperties: true,
+    },
+    hasActivityFeed: true,
 };
+
+const previewerPropsAnnot = {
+    logoUrl: 'box',
+    contentSidebarProps: sideBarProps,
+    token: access_token,
+    fileId: FILE_ID_DOC,
+
+    enableAnnotationsDiscoverability: true,
+    enableAnnotationsImageDiscoverability: true,
+
+    showAnnotations: true,
+    showAnnotationsControls: true,
+    showAnnotationsDrawingCreate: true,
+}
 
 const previewerProps = {
     logoUrl: 'box',
     contentSidebarProps: sideBarProps,
+    token: access_token,
+    fileId: FILE_ID_DOC,
+    showAnnotations: true,
 }
 
 const explorerProps = {
@@ -38,19 +71,19 @@ const explorerProps = {
 
     rootFolderId: '0',
     currentFolderId: '0',
-    
-    logoUrl: 'box', 
 
-    canCreateNewFolder  : true,
-    canDelete           : true,
-    canDownload         : true,
-    canPreview          : true,
-    canRename           : true,
-    canSetShareAccess   : true,
-    canShare            : true,
-    canUpload           : true,
+    logoUrl: 'box',
 
-    contentPreviewProps :previewerProps,
+    canCreateNewFolder: true,
+    canDelete: true,
+    canDownload: true,
+    canPreview: true,
+    canRename: true,
+    canSetShareAccess: true,
+    canShare: true,
+    canUpload: true,
+
+    contentPreviewProps: previewerProps,
 }
 
 class App extends React.Component {
@@ -72,6 +105,12 @@ class App extends React.Component {
         }
         if (component === 'Explorer') {
             return <Explorer {...explorerProps} />;
+        }
+        if (component === 'PreviewerSimple') {
+            return <Previewer {...previewerProps} />;
+        }
+        if (component === 'PreviewerAnnotations') {
+            return <PreviewerAnnotations {...previewerPropsAnnot} />;
         }
         else {
             return <NotImplemented />;

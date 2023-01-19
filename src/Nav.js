@@ -12,10 +12,14 @@ class Nav extends React.Component {
                     <div className='menu-item' id='ExplorerSimple' onClick={this.props.handleClick}>Explorer Simple</div>
                     
                     <div className='menu-item' id='Explorer' onClick={this.props.handleClick}>Explorer</div>
+
+                    <div className='menu-item' id='PreviewerSimple' onClick={this.props.handleClick}>Previewer Simple</div>
+
+                    <div className='menu-item' id='PreviewerAnnotations' onClick={this.props.handleClick}>Previewer w/ Annotations</div>
 {/* 
                     <div className='menu-item' id='ExplorerExamples' onClick={this.props.handleClick}>Explorer Example</div>
 
-                    <div className='menu-item' id='Previewer' onClick={this.props.handleClick}>Previewer</div>
+                    
 
                     <div className='menu-item' id='Picker'  onClick={this.props.handleClick}>Picker</div>
 
