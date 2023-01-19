@@ -13,7 +13,7 @@ import ExplorerSimple from './Explorer-Simple';
 import Previewer from './Previewer';
 import PreviewerAnnotations from './PreviewerAnnotations';
 
-const access_token = '67p43LjYAMRTe6A8pR6PriAxLATyC0Vf';
+const access_token = 'sI82FybSpE6oX7Veypq8kCG4Xb8gkl84';
 const FILE_ID_DOC = '994851508870';
 
 const sideBarProps = {
